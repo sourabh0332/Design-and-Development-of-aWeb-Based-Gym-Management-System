@@ -1,0 +1,196 @@
+<?php
+error_reporting(0);
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Gym website</title>
+<br />
+<br /> <link href="style.css" rel="stylesheet" type="text/css" />
+<link rel="icon" href="images/icon.ico" />
+
+</head>
+
+<body>
+<div id="headerbg">
+
+  <div id="headerblank">
+   <div id="header" >
+
+        <div id="info">
+     
+          <font align="right" >         &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp       &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp        &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp       &nbsp    &nbsp     &nbsp    &nbsp     &nbsp        &nbsp    &nbsp   
+    &nbsp    &nbsp     &nbsp    &nbsp     &nbsp    &nbsp    &nbsp      &nbsp &nbspWelcome <b><?php  echo" admin "; ?></b>
+		</font>
+    </div>
+	
+
+&nbsp    &nbsp    &nbsp    &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp    &nbsp    &nbsp    &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp     <div id="sign"><a href="logout.php" class="sign">&nbsp    &nbsp    &nbsp    &nbsp  &nbsp      &nbsp    &nbsp     &nbsp    &nbsp     &nbsp    &nbsp &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp Logout</a> </div>
+
+       <div id="menu">
+        <ul>
+          <li><a href="index.php" class="menu">Home</a></li>
+          <li><a href="abtus.html" class="menu">About Us</a></li>
+          <li><a href="membership.html" class="menu">Membership</a></li>
+          <li><a href="fitness.html" class="menu">Fitness</a></li>
+
+        </ul>
+      </div>   
+
+        
+
+       
+        
+      
+    </div>
+  </div>
+</div>
+
+<div id="contentbg">
+   <div id="content">
+      <div id="contentleft">
+      
+      <div id="leftnav">
+          <ul>
+            <li><a href="customer_details.php" class="leftnav"><b>Customer</b></a></li>
+            <li><a href="trainner_details.php" class="leftnav"><b>Traineer</b></a></li>
+            <li><a href="equip_details.php" class="leftnav"><b>Equipment Details</b></a></li>
+            <li><a href="#" class="leftnav"><b>News and Update</b></a></li>
+</b>
+  
+         </ul>
+        </div>
+      </div>
+      <div id="contentmid">        
+        <div class="midheading">
+                   
+  </div>
+ 
+
+
+<div id="contentbg">
+  <div id="contentblank">
+    <div id="content">
+<h2><b><font color =#7e8901 face="Georgia">Registration Form</font></b></h2><br>
+
+<table border= "0" WIDTH="500" HEIGHT="400" cellpadding="8">
+
+<tr>
+<form action="trainner_register_sql.php" method="POST" >
+  <td><b><font color = "#943415">First Name</font></b></td>
+  <td><b><div>
+            
+              <input name="fname"  type="text" required>
+            
+        </div></b></font>
+  </td>
+</tr>
+
+<tr>
+  <td><b><font color = "#943415">Last Name</font></b></td>
+  <td><b><div>
+             <input type="text" name="lname" required>
+           </div></b></font>
+  </td>
+</tr>
+
+<tr>
+  <td><b><font color = "#943415">Gender</font></b></td>
+  <td><b>
+              <input type="radio" name="gen" value="male" checked="checked">Male
+              <input type="radio" name="gen" value="female">Female
+         </b>
+  </td>
+</tr>
+
+
+<tr>
+  <td><b><font color = "#943415">Date of Birth</font></b></td>
+  <td><b><div>
+            
+      
+              <input  type="date" name="dob" required >
+        
+          </div></b></font>
+  </td>
+</tr>
+<tr>
+  <td><b><font color = "#943415">Residential Address</font></b></td>
+  <td><b><div >
+            
+              <input name="addr" type="text" required >
+         </div></b></font>
+  </td>
+</tr>
+
+<tr>
+  <td><b><font color = "#943415">Mob. NO.</font></b></td>
+  <td><b><div>
+                         <input name="mob" type="text" required>
+            
+          </div></b></font>
+  </td>
+</tr>
+
+
+<tr>
+  <td><b><font color = "#943415">Email Address</font></b></td>
+  <td><b><div>
+              <input name="email" type="text"    required>
+         </div></b></font>
+  </td>
+</tr>
+<tr> <td><b><font color = "#943415">Qualification</font></b></td>
+  <td><b>
+           
+            Certified from  <input type="radio" name="qual" value="NASM"checked="checked">NASM
+   <br>
+              <input type="radio" name="qual" value="ACSM">ACSM
+     <br>
+              <input type="radio" name="qual" value="NSCA">NSCA
+     <br>
+              <input type="radio" name="qual" value="ACE">ACE
+        </b>     
+           
+      
+  </td>
+</td>         </b>     
+           
+      
+  </td>
+
+</tr>
+
+
+
+</table>
+
+
+
+
+
+          <div id="loginbutton"><input type="submit" ></div>
+      
+    
+          <div id="loginbutton"><a href="trainner_login.html" class="login">Reset</a></div>
+</div>
+</div>
+</div>
+
+
+<div id="footerbg">
+  <div id="footerblank">
+    <div id="footer">
+       
+     <div id="footerlinks"><a href="index.php" class="footerlinks">Home</a> 
+                           |  <a href="abtus.html" class="footerlinks">About Us</a> 
+                           | <a href="membership.html" class="footerlinks">Membership</a> 
+                           | <a href="fitness.html" class="footerlinks">Fitness</a></div>
+      
+      </div>
+      </div>
+  </div>
+
+</div>
+</body>
+</html>
