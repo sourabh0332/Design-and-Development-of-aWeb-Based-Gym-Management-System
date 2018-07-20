@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)http://embed.tlk.io/GeeksQuiz -->
+<html lang="en" class="js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths isIframe theme--day"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>tlk.io / geeksquiz</title>
+  <meta name="description" content="This is a simple web chat. It&#39;s open to anyone and chat channels are owner-free.">
+  <meta name="author" content="See tlk.io/humans.txt">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  
+
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://embed.tlk.io/images/apple-touch-icon-144x144-precomposed.png">
+  
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://embed.tlk.io/images/apple-touch-icon-72x72-precomposed.png">
+  
+
+  <meta name="apple-mobile-web-app-title" content="tlk.io">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <!-- iPhone 5 support: https://gist.github.com/burin/3840737 -->
+  <meta name="viewport" id="vp" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width,minimal-ui">
+  <meta name="viewport" id="vp" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,minimal-ui" media="(device-height: 568px)">
+  <link href="http://embed.tlk.io/images/startup-640x1096.png" rel="apple-touch-startup-image" media="(device-height: 568px)">
+  <link href="http://embed.tlk.io/images/startup-640x960.png" rel="apple-touch-startup-image" sizes="640x960" media="(device-height: 480px)">
+
+  <meta content="authenticity_token" name="csrf-param">
+<meta content="coaFQ79/ymNltk+lg1td6KKXymiNex6AU0M9dD/o098=" name="csrf-token">
+
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,bold|Terminal+Dosis:500" media="screen" rel="stylesheet">
+
+  <link href="http://embed.tlk.io/assets/application-93a7ffc398e7616dc62a6d9ee733362d.css" media="screen" rel="stylesheet">
+  
+
+  <script type="text/javascript" async="" src="ga.js"></script><script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-11370103-4']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+  <script src="modernizr-1.7.min-b44cc54c8578addbdae0ec5f171064d6.js"></script>
+
+  <style id="ban-list"></style>
+<link type="image/x-icon" rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACDElEQVQ4T6WTu2sUURTGvzOTMS7EDZhsfGAjqIHVysRFEVEbEcQ/QIhYWGyzEsV0aqHglrEIKRZxG7sEbSxiI4ovxGyhyIKijfGFikajIYvzOJ7vkmxWMiSFA2fvnNfvfPfOXcF/PpLWX/uo3ViNsH+t/FyJ/w/gyE3d8fwTrn6fwy5RxF3tmCgWUDy3Wz7X67oqn4eKSNgKbQIqNe0euod6KOgJLGoARAmQDfBkYwa3301jUBIkvV24/KAoVxYgTcD2qp55PY3hNsv4FlVrpsWxwcwY5xpH0MF92Fk+JM8IaQK2VHTk/S+UOLnNAxIrVrPAigiBmYUR/wEOb8PJGyek6gBjNe08+xjVD7M46vsITKYDcCXEN6BnFtrOPYuB8QRRLoM7QwdxXDaP6vWp3xhwE0wPp9DoUwEVBVRkgMiM/kJ+XQduiZS1YX3tJHvMUAE3ZoUazUtnzHzmXB3h3KoglExZvzQUOddgE3iAPLCEDQbgFhyUeaq0lTVUaHU/pFDR0tMpjIh5lOdkcxv241PB/BNwOn1b3VeyYfkNOO++wp5RPfZtBgO+h+ybGfTFigwndHj4uimLV3yXhhXyCvk2XDHbE2D8/iW5tuQqF4a1NPnWFCmi/Vtx4O4pebSoY+lbyn9BJXcaE+s7MfniolxYrtndg7SChy91zd5ezNm9bzmFdFQqYKWprfm/yGvH9L7eytMAAAAASUVORK5CYII="></head>
+<body class="isVirgin hasOwner">
+  
+  <!--
+    This is an embedded version of the tlk.io.
+    Fullscreen chat is available at: tlk.io/geeksquiz
+    To embed a chat like this on your webpage: tlk.io/#embed
+
+    Best regards,
+    @antstorm and @simurai
+  -->
+
+<header id="header" class="header">
+  <div class="header-bar">
+      <a class="header-avatar" href="https://twitter.com/GeeksQuiz" target="_blank" style="background-image: url(https://pbs.twimg.com/profile_images/492211736150175744/2DgI11gr_bigger.png);">tlk.io</a>
+    <span id="channel" class="header-channel">geeksquiz</span>
+  </div>
+</header>
+
+<div id="chat" class="chat">
+  <section id="live">
+    <button id="load-button" class="button button-load show">Load more</button>
+  <dl class="post author_30d790" data-user-id="30d790" data-user-nickname="zyx">
+  <dt class="post-meta" data-timestamp="1413035857">
+    
+      <span class="post-name">zyx</span>
+      <div class="post-reply js-reply" data-name="zyx">
+        <div class="post-avatar post-avatar--troll">z</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413035857">
+  hi
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><dl class="post author_96a633" data-user-id="96a633" data-user-nickname="Sairam">
+  <dt class="post-meta" data-timestamp="1413036043">
+    
+      <span class="post-name">Sairam</span>
+      <div class="post-reply js-reply" data-name="Sairam">
+        <div class="post-avatar post-avatar--troll">S</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413036043">
+  Hello Please correct Quiz question 3 in Quick Sort
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><dl class="post author_922693" data-user-id="922693" data-user-nickname="Kartik">
+  <dt class="post-meta" data-timestamp="1413041363">
+    
+      <span class="post-name">Kartik</span>
+      <div class="post-reply js-reply" data-name="Kartik">
+        <div class="post-avatar post-avatar--troll">K</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413041363">
+  Sairam,  could you please provide the link?
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><dl class="post author_2213dd" data-user-id="2213dd" data-user-nickname="rashid">
+  <dt class="post-meta" data-timestamp="1413045478">
+    
+      <span class="post-name">rashid</span>
+      <div class="post-reply js-reply" data-name="rashid">
+        <div class="post-avatar post-avatar--troll">r</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413045478">
+  hi, any idea about aks software campus process 2014
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><dl class="post author_4a8202" data-user-id="4a8202" data-user-nickname="gd">
+  <dt class="post-meta" data-timestamp="1413045658">
+    
+      <span class="post-name">gd</span>
+      <div class="post-reply js-reply" data-name="gd">
+        <div class="post-avatar post-avatar--troll">g</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413045658">
+  hello can anyone tell me that if we use return 1000; instead of zero then how C program execute ?
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd><dd class="post-message" data-timestamp="1413045677">
+  and why?
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><dl class="post author_35fc4f" data-user-id="35fc4f" data-user-nickname="l">
+  <dt class="post-meta" data-timestamp="1413045692">
+    
+      <span class="post-name">l</span>
+      <div class="post-reply js-reply" data-name="l">
+        <div class="post-avatar post-avatar--troll">l</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413045692">
+  ?
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><dl class="post author_4a8202" data-user-id="4a8202" data-user-nickname="gd">
+  <dt class="post-meta" data-timestamp="1413045777">
+    
+      <span class="post-name">gd</span>
+      <div class="post-reply js-reply" data-name="gd">
+        <div class="post-avatar post-avatar--troll">g</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413045777">
+  instead of  return 0, what happen if we use any other value than zero.
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><dl class="post author_35fc4f" data-user-id="35fc4f" data-user-nickname="l">
+  <dt class="post-meta" data-timestamp="1413047012">
+    
+      <span class="post-name">l</span>
+      <div class="post-reply js-reply" data-name="l">
+        <div class="post-avatar post-avatar--troll">l</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413047012">
+  ?
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd><dd class="post-message" data-timestamp="1413047048">
+  I think you can do that too
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd><dd class="post-message" data-timestamp="1413047048">
+  any positive value should work
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><dl class="post author_2867a1" data-user-id="2867a1" data-user-nickname="piyush">
+  <dt class="post-meta" data-timestamp="1413091980">
+    
+      <span class="post-name">piyush</span>
+      <div class="post-reply js-reply" data-name="piyush">
+        <div class="post-avatar post-avatar--troll">p</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413091980">
+  hi
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><dl class="post author_1500aa" data-user-id="1500aa" data-user-nickname="saurabh ">
+  <dt class="post-meta" data-timestamp="1413098145">
+    
+      <span class="post-name">saurabh </span>
+      <div class="post-reply js-reply" data-name="saurabh ">
+        <div class="post-avatar post-avatar--troll">s</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413098145">
+  HII
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><dl class="post author_ff3eda" data-user-id="ff3eda" data-user-nickname="vishal">
+  <dt class="post-meta" data-timestamp="1413099664">
+    
+      <span class="post-name">vishal</span>
+      <div class="post-reply js-reply" data-name="vishal">
+        <div class="post-avatar post-avatar--troll">v</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413099664">
+  hello everybody
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><dl class="post author_73bacf" data-user-id="73bacf" data-user-nickname="NadanaPrince">
+  <dt class="post-meta" data-timestamp="1413099705">
+    
+      
+        <a class="post-name post-name--twitter" href="https://twitter.com/NadanaPrince" target="_blank">NadanaPrince</a>
+        <div class="post-reply js-reply" data-name="NadanaPrince">
+          <div class="post-avatar" style="background-image: url(https://abs.twimg.com/sticky/default_profile_images/default_profile_5_normal.png);"></div>
+          <button class="post-reply-button">@</button>
+        </div>
+      
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413099705">
+  Hello
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><dl class="post author_ff3eda last-of-time" data-user-id="ff3eda" data-user-nickname="vishal">
+  <dt class="post-meta" data-timestamp="1413099767">
+    
+      <span class="post-name">vishal</span>
+      <div class="post-reply js-reply" data-name="vishal">
+        <div class="post-avatar post-avatar--troll">v</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413099767">
+  anybody wanna have some discussion in any general topic?
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd><dd class="post-message" data-timestamp="1413099777">
+  on*
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><time class="time">2 days ago</time><dl class="post author_74cb4c" data-user-id="74cb4c" data-user-nickname="om">
+  <dt class="post-meta" data-timestamp="1413102132">
+    
+      <span class="post-name">om</span>
+      <div class="post-reply js-reply" data-name="om">
+        <div class="post-avatar post-avatar--troll">o</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413102132">
+  hi.
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><dl class="post author_af9854" data-user-id="af9854" data-user-nickname="Perror">
+  <dt class="post-meta" data-timestamp="1413102330">
+    
+      <span class="post-name">Perror</span>
+      <div class="post-reply js-reply" data-name="Perror">
+        <div class="post-avatar post-avatar--troll">P</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413102330">
+  HI
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd><dd class="post-message" data-timestamp="1413102342">
+  i have one doubt
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd><dd class="post-message" data-timestamp="1413102353">
+  is anyone thr?
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><dl class="post author_592ea6" data-user-id="592ea6" data-user-nickname="n">
+  <dt class="post-meta" data-timestamp="1413103253">
+    
+      <span class="post-name">n</span>
+      <div class="post-reply js-reply" data-name="n">
+        <div class="post-avatar post-avatar--troll">n</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413103253">
+  yep
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><dl class="post author_2867a1" data-user-id="2867a1" data-user-nickname="piyush">
+  <dt class="post-meta" data-timestamp="1413106094">
+    
+      <span class="post-name">piyush</span>
+      <div class="post-reply js-reply" data-name="piyush">
+        <div class="post-avatar post-avatar--troll">p</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413106094">
+  yeah wats the doubt
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><dl class="post author_3f86c4" data-user-id="3f86c4" data-user-nickname="mayank">
+  <dt class="post-meta" data-timestamp="1413107016">
+    
+      <span class="post-name">mayank</span>
+      <div class="post-reply js-reply" data-name="mayank">
+        <div class="post-avatar post-avatar--troll">m</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413107016">
+  yes
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><dl class="post author_06f8c5" data-user-id="06f8c5" data-user-nickname="debo">
+  <dt class="post-meta" data-timestamp="1413112207">
+    
+      <span class="post-name">debo</span>
+      <div class="post-reply js-reply" data-name="debo">
+        <div class="post-avatar post-avatar--troll">d</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413112207">
+  sure
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><dl class="post author_d5c6bc" data-user-id="d5c6bc" data-user-nickname="arun">
+  <dt class="post-meta" data-timestamp="1413115588">
+    
+      <span class="post-name">arun</span>
+      <div class="post-reply js-reply" data-name="arun">
+        <div class="post-avatar post-avatar--troll">a</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413115588">
+  hi
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><dl class="post author_a0d4fb" data-user-id="a0d4fb" data-user-nickname="aniket">
+  <dt class="post-meta" data-timestamp="1413117111">
+    
+      <span class="post-name">aniket</span>
+      <div class="post-reply js-reply" data-name="aniket">
+        <div class="post-avatar post-avatar--troll">a</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413117111">
+  any ideas bout hp interviews?
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><dl class="post author_1358e6" data-user-id="1358e6" data-user-nickname="khan">
+  <dt class="post-meta" data-timestamp="1413117241">
+    
+      <span class="post-name">khan</span>
+      <div class="post-reply js-reply" data-name="khan">
+        <div class="post-avatar post-avatar--troll">k</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413117241">
+  A const object can only call const functions.
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><dl class="post author_a0d4fb" data-user-id="a0d4fb" data-user-nickname="aniket">
+  <dt class="post-meta" data-timestamp="1413117972">
+    
+      <span class="post-name">aniket</span>
+      <div class="post-reply js-reply" data-name="aniket">
+        <div class="post-avatar post-avatar--troll">a</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413117972">
+  ?
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><dl class="post author_1358e6" data-user-id="1358e6" data-user-nickname="khan">
+  <dt class="post-meta" data-timestamp="1413119922">
+    
+      <span class="post-name">khan</span>
+      <div class="post-reply js-reply" data-name="khan">
+        <div class="post-avatar post-avatar--troll">k</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413119922">
+  source for sql for interview prep??
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><dl class="post author_a0d4fb" data-user-id="a0d4fb" data-user-nickname="aniket">
+  <dt class="post-meta" data-timestamp="1413120909">
+    
+      <span class="post-name">aniket</span>
+      <div class="post-reply js-reply" data-name="aniket">
+        <div class="post-avatar post-avatar--troll">a</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413120909">
+  sqlzoo
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><dl class="post author_7d9e7d" data-user-id="7d9e7d" data-user-nickname="Riya">
+  <dt class="post-meta" data-timestamp="1413134836">
+    
+      <span class="post-name">Riya</span>
+      <div class="post-reply js-reply" data-name="Riya">
+        <div class="post-avatar post-avatar--troll">R</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413134836">
+  Any one have given interview in Intuit ?
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd><dd class="post-message" data-timestamp="1413135268">
+  Any one have given interview in Intuit ?
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><dl class="post author_a39599" data-user-id="a39599" data-user-nickname="mohsin mohammad">
+  <dt class="post-meta" data-timestamp="1413138600">
+    
+      <span class="post-name">mohsin mohammad</span>
+      <div class="post-reply js-reply" data-name="mohsin mohammad">
+        <div class="post-avatar post-avatar--troll">m</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413138600">
+  Anyone had interviewed for google intern before?
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><dl class="post author_c650be" data-user-id="c650be" data-user-nickname="pp">
+  <dt class="post-meta" data-timestamp="1413139131">
+    
+      <span class="post-name">pp</span>
+      <div class="post-reply js-reply" data-name="pp">
+        <div class="post-avatar post-avatar--troll">p</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413139131">
+  ^same question
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><dl class="post author_1358e6 last-of-time" data-user-id="1358e6" data-user-nickname="khan">
+  <dt class="post-meta" data-timestamp="1413145647">
+    
+      <span class="post-name">khan</span>
+      <div class="post-reply js-reply" data-name="khan">
+        <div class="post-avatar post-avatar--troll">k</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413145647">
+  The instanceof operator works even when the reference is of base class type.
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><time class="time">Yesterday</time><dl class="post author_cf6ed5" data-user-id="cf6ed5" data-user-nickname="aj">
+  <dt class="post-meta" data-timestamp="1413189084">
+    
+      <span class="post-name">aj</span>
+      <div class="post-reply js-reply" data-name="aj">
+        <div class="post-avatar post-avatar--troll">a</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413189084">
+  exact diffrence between char and int?
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><dl class="post author_acadde" data-user-id="acadde" data-user-nickname="satveer">
+  <dt class="post-meta" data-timestamp="1413192760">
+    
+      <span class="post-name">satveer</span>
+      <div class="post-reply js-reply" data-name="satveer">
+        <div class="post-avatar post-avatar--troll">s</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413192760">
+  char takes 1 byte
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd><dd class="post-message" data-timestamp="1413192762">
+  int 4 byte 
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd><dd class="post-message" data-timestamp="1413192783">
+  <a href="http://geeksquiz.com/c-programs/" target="_blank" data-type="url">http://geeksquiz.com/c-prog...</a>
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><dl class="post author_fbda02" data-user-id="fbda02" data-user-nickname="shweta">
+  <dt class="post-meta" data-timestamp="1413193344">
+    
+      <span class="post-name">shweta</span>
+      <div class="post-reply js-reply" data-name="shweta">
+        <div class="post-avatar post-avatar--troll">s</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413193344">
+  int size is depended on machine architech
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd><dd class="post-message" data-timestamp="1413193366">
+  But char is 1 byte only.
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><dl class="post author_cd2b15" data-user-id="cd2b15" data-user-nickname="bbbbb">
+  <dt class="post-meta" data-timestamp="1413193569">
+    
+      <span class="post-name">bbbbb</span>
+      <div class="post-reply js-reply" data-name="bbbbb">
+        <div class="post-avatar post-avatar--troll">b</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message deleted" data-timestamp="1413193569">Message removed by the chat owner</dd></dl><dl class="post author_46ae8f" data-user-id="46ae8f" data-user-nickname="biki">
+  <dt class="post-meta" data-timestamp="1413214625">
+    
+      <span class="post-name">biki</span>
+      <div class="post-reply js-reply" data-name="biki">
+        <div class="post-avatar post-avatar--troll">b</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message" data-timestamp="1413214625">
+  can anyone provide the test pattern of power2sme company 
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button" style="display: none;">Delete</button>
+    </div>
+  </div>
+</dd></dl><dl class="post author_fdf619" data-user-id="fdf619" data-user-nickname="swami">
+  <dt class="post-meta" data-timestamp="1413220181">
+    
+      <span class="post-name">swami</span>
+      <div class="post-reply js-reply" data-name="swami">
+        <div class="post-avatar post-avatar--troll">s</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message deleted" data-timestamp="1413220181">Message removed by the chat owner</dd><dd class="post-message deleted" data-timestamp="1413220207">Message removed by the chat owner</dd></dl><dl class="post author_0d6e83 last-of-time" data-user-id="0d6e83" data-user-nickname="khan">
+  <dt class="post-meta" data-timestamp="1413221187">
+    
+      <span class="post-name">khan</span>
+      <div class="post-reply js-reply" data-name="khan">
+        <div class="post-avatar post-avatar--troll">k</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message deleted" data-timestamp="1413221187">Message removed by the chat owner</dd></dl><time class="time">Half a day ago</time><dl class="post author_c12d46 last-of-time" data-user-id="c12d46" data-user-nickname="Aayush">
+  <dt class="post-meta" data-timestamp="1413232480">
+    
+      <span class="post-name">Aayush</span>
+      <div class="post-reply js-reply" data-name="Aayush">
+        <div class="post-avatar post-avatar--troll">A</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message deleted" data-timestamp="1413232480">Message removed by the chat owner</dd></dl><time class="time">Couple hours ago</time><dl class="post author_3e07f6 last-of-time" data-user-id="3e07f6" data-user-nickname="atul">
+  <dt class="post-meta" data-timestamp="1413268243">
+    
+      <span class="post-name">atul</span>
+      <div class="post-reply js-reply" data-name="atul">
+        <div class="post-avatar post-avatar--troll">a</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    
+  </dt>
+<dd class="post-message deleted" data-timestamp="1413268243">Message removed by the chat owner</dd><dd class="post-message deleted" data-timestamp="1413268340">Message removed by the chat owner</dd></dl><time class="time">An hour ago</time></section>
+  <div class="warning">
+    <strong>Note</strong>: Soon the <strong>history</strong> of this public channel will be <strong>removed</strong>. Find out how to <a href="http://blog.tlk.io/post/92422386853/new-channel-types-are-comming" target="_blank">keep it</a>.
+    <button class="warning-close">×</button>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-wrapper">
+    <button id="join-toggleButton" class="button join-toggleButton">Wanna join?</button>
+    <div id="join" class="join">
+      <span class="join-hl">Wanna join?</span>
+      <form action="http://embed.tlk.io/something/participant" id="participant-form" class="join-form" method="post">
+        <input id="participant_nickname" class="input-text join-input--troll" name="participant[nickname]" placeholder="Name" size="30" spellcheck="false" type="text">
+      </form>
+      <span class="join-or">or</span>
+      <button id="twitter-button" class="button join-button--twitter">
+        <svg class="twitter-button-icon" viewBox="0 0 36 36"><use xlink:href="#icon-twitter"></use></svg>
+        Twitter
+      </button>
+      <p class="join-hint">By using Twitter you'll get your avatar. We won't tweet anything.</p>
+    </div>
+  </div>
+</footer>
+
+<aside class="aside">
+
+  <menu class="menu">
+    <button id="admin-button" class="menu-item menu-item--admin button" title="Admin">
+      <svg class="menu-item-icon" viewBox="0 0 36 36"><use xlink:href="#icon-channel"></use></svg>
+    </button>
+    <button id="user-button" class="menu-item menu-item--user button">
+      <svg class="menu-item-icon" viewBox="0 0 36 36"><use xlink:href="#icon-troll"></use></svg>
+    </button>
+  </menu>
+
+  <div class="settingsWrapper">
+
+    <div id="admin-settings" class="settings settings--admin tooltip">
+      <div class="tooltip-item owner">
+        <h3 id="owner-intro" class="settings-title">This chat is owned by:</h3>
+        <ul id="owners-list" class="settings-list list">
+  <li class="settings-list-item">
+    <span class="list-item-avatar" style="background-image: url(https://pbs.twimg.com/profile_images/492211736150175744/2DgI11gr_normal.png);"></span>
+    <a class="list-item-name" href="http://twitter.com/GeeksQuiz" target="_blank">@GeeksQuiz</a>
+  </li>
+</ul>
+        <div id="ownership-status" class="owner-status">
+  
+    
+      <p>Please log in with Twitter to claim/use your own chat room.</p>
+    
+  
+</div>
+      </div>
+      <div class="tooltip-item">
+        <button id="remove-messages" class="settings-button button button--danger isHidden">Remove my messages from this channel</button>
+      </div>
+    </div>
+
+    <div id="user-settings" class="settings settings--user tooltip">
+      <div id="owned-channel-list" class="tooltip-item" style="display: none;">
+        <h3 class="settings-title">Your channel:</h3>
+        <ul class="settings-list"></ul>
+      </div>
+      <div class="tooltip-item">
+        <ul class="settings-list">
+          <li class="settings-list-item">
+            <label class="settings-label">Notifications</label>
+            <button id="notifications" class="settings-toggle toggle" title="Notifications"></button>
+          </li>
+          <li class="settings-list-item">
+            <label class="settings-label">Sounds</label>
+            <button id="mute_button" class="settings-toggle toggle" title="Sound"></button>
+          </li>
+        </ul>
+      </div>
+      <div class="tooltip-item">
+        <ul id="theme-picker" class="theme-picker">
+          <li data-theme="theme--day" class="theme-picker-item isSelected"></li>
+          <li data-theme="theme--pop" class="theme-picker-item"></li>
+          <li data-theme="theme--minimal" class="theme-picker-item"></li>
+          <li data-theme="theme--night" class="theme-picker-item"></li>
+        </ul>
+      </div>
+      <div class="tooltip-item">
+        <button id="sign-out" class="settings-button button" style="display: none;">Sign out</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="participants">
+    <ul id="online-participants" class="list list--participant"><li id="author_cd2b15" class="list-item">
+  
+    <span class="list-item-avatar"></span>
+  
+  <span class="list-item-name">bbbbb</span>
+</li><li id="author_0d6e83" class="list-item">
+  
+    <span class="list-item-avatar"></span>
+  
+  <span class="list-item-name">khan</span>
+</li><li id="author_3fbc1f" class="list-item">
+  
+    <span class="list-item-avatar"></span>
+  
+  <span class="list-item-name">swami</span>
+</li><li id="author_4f7623" class="list-item">
+  
+    <span class="list-item-avatar"></span>
+  
+  <span class="list-item-name">swami</span>
+</li><li id="author_caafb4" class="list-item">
+  
+    <span class="list-item-avatar"></span>
+  
+  <span class="list-item-name">Pratik</span>
+</li></ul>
+  </div>
+
+  <div class="counter">
+    <span id="user-counter" class="counter-nr">-560</span> online
+    <button id="share_button" class="counter-button button" title="Invite">+</button>
+  </div>
+
+  <div class="info">
+    <a href="http://tlk.io/" target="_blank">A chat by tlk.io</a><br>
+    <a href="https://www.linode.com/?r=a0768700b085bed32254ee873a3a09a0228a9283" target="_blank">Hosted on Linode</a><br>
+  </div>
+
+</aside>
+
+<nav class="nav">
+  <button id="panel-button" class="nav-button">
+    <svg class="nav-button-slider" viewBox="0 0 100 50"><use xlink:href="#icon-nav"></use></svg>
+  </button>
+  <div id="panel-counter" class="nav-counter">-560</div>
+</nav>
+
+<button id="scroll_down" class="scrollButton">
+  <svg class="scrollButton-icon" viewBox="0 0 36 36"><use xlink:href="#icon-arrow-down"></use></svg>
+</button>
+
+
+
+<!-- Icons --------------------------------------------- -->
+
+<svg style="display:none;">
+
+  <path id="icon-troll" transform="translate(10, 9)" d="M5.84818444,9.23596328 C5.92733701,10.0946459 5.85949905,11.1958603 5.16334661,11.8372093 C4.01593625,13 1.14741036,14.0465116 1.14741036,14.0465116 C1.14741036,14.0465116 0,14.627907 0,16.0232558 L0,18 L15.949004,18 C15.949004,18 16.063745,17.1860465 15.949004,16.0232558 C15.7195219,14.9767442 15.7195219,14.627907 15.1458167,14.0465116 C14.4573705,13.3488372 12.1625498,13.1162791 10.9003984,11.8372093 C10.2374346,11.0981738 10.1873584,9.93212999 10.2632532,9.07924304 C11.3044085,8.16686717 12,6.66022262 12,4.94382022 C12,1.23595506 10.1369863,0 7.94520548,0 C5.75342466,0 4,1.23595506 4,4.94382022 C4,6.76252133 4.73503796,8.34571607 5.84818444,9.23596328 Z"></path>
+
+  <path id="icon-channel" transform="translate(10, 11)" d="M3.99620271,0 C1.78916089,0 0,1.79652125 0,3.99582624 L0,8.00417376 C0,10.2110077 1.78883037,12 3.99620271,12 L12.0037973,12 C14.2108391,12 16,10.2034788 16,8.00417376 L16,3.99582624 C16,1.78899235 14.2111696,0 12.0037973,0 L3.99620271,0 Z M4,12 L4,16 L8,12 L4,12 Z"></path>
+
+  <path id="icon-banner-off" transform="translate(10, 10)" fill-rule="evenodd" d="M1.99406028,3 C0.892771196,3 0,3.88743329 0,4.99961498 L0,11.000385 C0,12.1047419 0.894513756,13 1.99406028,13 L14.0059397,13 C15.1072288,13 16,12.1125667 16,11.000385 L16,4.99961498 C16,3.89525812 15.1054862,3 14.0059397,3 L1.99406028,3 Z M3.00247329,5 C2.44882258,5 2,5.45097518 2,5.99077797 L2,10.009222 C2,10.5564136 2.45576096,11 3.00247329,11 L12.9975267,11 C13.5511774,11 14,10.5490248 14,10.009222 L14,5.99077797 C14,5.44358641 13.544239,5 12.9975267,5 L3.00247329,5 Z"></path>
+
+  <path id="icon-banner-on" transform="translate(10, 14)" fill-rule="evenodd" d="M1.99406028,0 C0.892771196,0 0,0.88743329 0,1.99961498 L0,8.00038502 C0,9.10474188 0.894513756,10 1.99406028,10 L14.0059397,10 C15.1072288,10 16,9.11256671 16,8.00038502 L16,1.99961498 C16,0.895258123 15.1054862,0 14.0059397,0 L1.99406028,0 Z M4,7 C5.10456955,7 6,6.10456955 6,5 C6,3.89543045 5.10456955,3 4,3 C2.89543045,3 2,3.89543045 2,5 C2,6.10456955 2.89543045,7 4,7 Z M8,2 L8,4 L14,4 L14,2 L8,2 Z M8,6 L8,8 L14,8 L14,6 L8,6 Z"></path>
+
+  <path id="icon-audio-off" transform="translate(14, 12)" d="M0,4 L3,4 L7,0 L7,12 L3,8 L0,8 L0,4"></path>
+
+  <path id="icon-audio-on" transform="translate(11, 12)" d="M0,4 L3,4 L7,0 L7,12 L3,8 L0,8 L0,4 M12,1 L12,11 L13,11 L13,1 L12,1 M10,3 L10,9 L11,9 L11,3 L10,3"></path>
+
+  <path id="icon-plus" transform="translate(11, 11)" d="M6,8 L1,8 L1,6 L6,6 L6,1 L8,1 L8,6 L13,6 L13,8 L8,8 L8,13 L6,13 L6,8 Z"></path>
+
+  <path id="icon-arrow-down" transform="translate(8, 7)" d="M7,12 L7,0 L13,0 L13,12 L20,12 L10,22 L0,12 L7,12 Z"></path>
+
+  <path id="icon-twitter" transform="translate(3, 6)" d="M25,5.89399206 C24.2642,6.21530132 23.4733,6.43236226 22.6434,6.53001507 C23.4905,6.03013505 24.1412,5.23857631 24.4475,4.29532101 C23.6546,4.75828591 22.7765,5.09436121 21.8418,5.27549143 C21.0934,4.49042975 20.027,4 18.8468,4 C16.5808,4 14.7435,5.80844741 14.7435,8.03910542 C14.7435,8.35568954 14.7798,8.66400468 14.8497,8.959621 C11.4395,8.79118959 8.4161,7.18306826 6.3923,4.73928692 C6.0391,5.33583536 5.8367,6.02964285 5.8367,6.76991417 C5.8367,8.17131079 6.5611,9.40762297 7.6621,10.131947 C6.9895,10.1109792 6.3568,9.92925831 5.8036,9.62675116 C5.8032,9.64358446 5.8032,9.6605162 5.8032,9.67754637 C5.8032,11.6345403 7.2176,13.2670748 9.0947,13.6381949 C8.7504,13.7305319 8.3879,13.7798505 8.0137,13.7798505 C7.7493,13.7798505 7.4923,13.7544529 7.2417,13.7073984 C7.7639,15.3120743 9.2792,16.4799705 11.0748,16.5124558 C9.6705,17.5957917 7.9013,18.2416587 5.9788,18.2416587 C5.6476,18.2416587 5.321,18.2224629 5,18.185154 C6.8159,19.3312948 8.9727,20 11.2899,20 C18.8372,20 22.9645,13.8451164 22.9645,8.5073861 C22.9645,8.33226074 22.9605,8.15811979 22.9526,7.98476636 C23.7543,7.41538746 24.4499,6.70405759 25,5.89399206 L25,5.89399206 Z"></path>
+
+
+  <!-- Wait till Chrome fixes <g> with <use> bug https://code.google.com/p/chromium/issues/detail?id=349175
+  <g id="icon-nav" fill-rule="evenodd">
+    <path id="icon-hamburger" d="M17.9950893,16 C16.8932319,16 16,16.8877296 16,18 L16,18 C16,19.1045695 16.8926228,20 17.9950893,20 L32.0049107,20 C33.1067681,20 34,19.1122704 34,18 L34,18 C34,16.8954305 33.1073772,16 32.0049107,16 L17.9950893,16 Z M17.9950893,23 C16.8932319,23 16,23.8877296 16,25 L16,25 C16,26.1045695 16.8926228,27 17.9950893,27 L32.0049107,27 C33.1067681,27 34,26.1122704 34,25 L34,25 C34,23.8954305 33.1073772,23 32.0049107,23 L17.9950893,23 Z M17.9950893,30 C16.8932319,30 16,30.8877296 16,32 L16,32 C16,33.1045695 16.8926228,34 17.9950893,34 L32.0049107,34 C33.1067681,34 34,33.1122704 34,32 L34,32 C34,30.8954305 33.1073772,30 32.0049107,30 L17.9950893,30 Z"></path>
+    <path id="icon-close" d="M66.5147186,33.4852814 C65.7282247,32.6987875 65.735236,31.4363368 66.5182164,30.6533565 L72.1715729,25 L66.5182164,19.3466435 C65.7347984,18.5632255 65.73367,17.2957672 66.5147186,16.5147186 C67.3012125,15.7282247 68.5636632,15.735236 69.3466435,16.5182164 L75,22.1715729 L80.6533565,16.5182164 C81.4367745,15.7347984 82.7042328,15.73367 83.4852814,16.5147186 C84.2717753,17.3012125 84.264764,18.5636632 83.4817836,19.3466435 L77.8284271,25 L83.4817836,30.6533565 C84.2652016,31.4367745 84.26633,32.7042328 83.4852814,33.4852814 C82.6987875,34.2717753 81.4363368,34.264764 80.6533565,33.4817836 L75,27.8284271 L69.3466435,33.4817836 C68.5632255,34.2652016 67.2957672,34.26633 66.5147186,33.4852814 C66.5147186,33.4852814 67.2957672,34.26633 66.5147186,33.4852814 L66.5147186,33.4852814 L66.5147186,33.4852814 Z"></path>
+  </g>
+  -->
+
+  <path id="icon-nav" fill-rule="evenodd" d="M17.9950893,16 C16.8932319,16 16,16.8877296 16,18 L16,18 C16,19.1045695 16.8926228,20 17.9950893,20 L32.0049107,20 C33.1067681,20 34,19.1122704 34,18 L34,18 C34,16.8954305 33.1073772,16 32.0049107,16 L17.9950893,16 Z M17.9950893,23 C16.8932319,23 16,23.8877296 16,25 L16,25 C16,26.1045695 16.8926228,27 17.9950893,27 L32.0049107,27 C33.1067681,27 34,26.1122704 34,25 L34,25 C34,23.8954305 33.1073772,23 32.0049107,23 L17.9950893,23 Z M17.9950893,30 C16.8932319,30 16,30.8877296 16,32 L16,32 C16,33.1045695 16.8926228,34 17.9950893,34 L32.0049107,34 C33.1067681,34 34,33.1122704 34,32 L34,32 C34,30.8954305 33.1073772,30 32.0049107,30 L17.9950893,30 Z M66.5147186,33.4852814 C65.7282247,32.6987875 65.735236,31.4363368 66.5182164,30.6533565 L72.1715729,25 L66.5182164,19.3466435 C65.7347984,18.5632255 65.73367,17.2957672 66.5147186,16.5147186 C67.3012125,15.7282247 68.5636632,15.735236 69.3466435,16.5182164 L75,22.1715729 L80.6533565,16.5182164 C81.4367745,15.7347984 82.7042328,15.73367 83.4852814,16.5147186 C84.2717753,17.3012125 84.264764,18.5636632 83.4817836,19.3466435 L77.8284271,25 L83.4817836,30.6533565 C84.2652016,31.4367745 84.26633,32.7042328 83.4852814,33.4852814 C82.6987875,34.2717753 81.4363368,34.264764 80.6533565,33.4817836 L75,27.8284271 L69.3466435,33.4817836 C68.5632255,34.2652016 67.2957672,34.26633 66.5147186,33.4852814 C66.5147186,33.4852814 67.2957672,34.26633 66.5147186,33.4852814 L66.5147186,33.4852814 L66.5147186,33.4852814 Z"></path>
+
+</svg>
+
+<!-- Audio --------------------------------------------- -->
+
+<audio id="audio_new">
+  <source src="/audio/new.mp3?150712" type="audio/mpeg">
+  <source src="/audio/new.ogg?150712" type="audio/ogg">
+  <source src="/audio/new.wav?150712" type="audio/wav">
+</audio>
+
+
+<!-- Scripts --------------------------------------------- -->
+
+
+
+  <!-- Handlebar.js templates -->
+  <script id="message-author-template" type="text/x-handlebars-template">
+  <dt class="post-meta" data-timestamp="{{timestamp}}">
+    {{#if user}}
+      {{#with user}}
+        <a class="post-name post-name--twitter" href="https://twitter.com/{{nickname}}" target="_blank">{{nickname}}</a>
+        <div class="post-reply js-reply" data-name="{{nickname}}">
+          <div class="post-avatar" style="background-image: url({{avatar}});"></div>
+          <button class="post-reply-button">@</button>
+        </div>
+      {{/with}}
+    {{else}}
+      <span class="post-name">{{nickname}}</span>
+      <div class="post-reply js-reply" data-name="{{nickname}}">
+        <div class="post-avatar post-avatar--troll">{{initials}}</div>
+        <button class="post-reply-button">@</button>
+      </div>
+    {{/if}}
+  </dt>
+</script>
+
+<script id="message-template" type="text/x-handlebars-template">
+  {{{body}}}
+  <div class="post-time">
+    <div class="post-time-dot"></div>
+    <div class="post-time-tag">
+      <span class="post-time-label js-post-time-tag"></span>
+      <button id="delete-message" class="post-time-button">Delete</button>
+    </div>
+  </div>
+</script>
+
+<script id="share-template" type="text/x-handlebars-template">
+  <div id="invite" class="popup-box">
+    <div class="popup-header">
+      <h2 class="popup-header-title">Invite to this chat!</h2>
+      <button id="popup-close" class="button popup-button--close">✕</button>
+    </div>
+    <div class="popup-content">
+      <p>Invite on <a class="button popup-button" href="https://twitter.com/share?text=Join%20me!%20I'm%20currently%20chatting%20on%3A&url=http%3A%2F%2Ftlk.io%2FGeeksQuiz" target="_blank">Twitter</a></p>
+      <p>Or share the link below anywhere you like.<br>
+        <span class="popup-link">http://tlk.io/GeeksQuiz</span> <a href="#" class="url_button button popup-button">Copy</a></p>
+    </div>
+    <div class="popup-footer">Remember, this is a public chat. Anybody with the link can read.</div>
+  </div>
+</script>
+
+<script id="join-chatroom-template" type="text/x-handlebars-template">
+  <div class="footer-wrapper">
+    <button id="join-toggleButton" class="button join-toggleButton">Wanna join?</button>
+    <div id="join" class="join">
+      <span class="join-hl">Wanna join?</span>
+      <form action="/something/participant" id="participant-form" class="join-form" method="post">
+        <input id="participant_nickname" class="input-text join-input--troll" name="participant[nickname]" placeholder="Name" size="30" spellcheck="false" type="text">
+      </form>
+      <span class="join-or">or</span>
+      <button id="twitter-button" class="button join-button--twitter">
+        <svg class="twitter-button-icon" viewBox="0 0 36 36"><use xlink:href="#icon-twitter"></use></svg>
+        Twitter
+      </button>
+      <p class="join-hint">By using Twitter you'll get your avatar. We won't tweet anything.</p>
+    </div>
+  </div>
+</script>
+
+<script id="message-form-template" type="text/x-handlebars-template">
+  <div class="footer-wrapper">
+    <form action="/" id="new_message" class="message" method="post">
+      <textarea id="message_body" class="message-input" name="message[body]" autocomplete="off" autofocus tabindex="1" cols="40" placeholder="be nice..." rows="1"></textarea>
+      {{#if twitter}}
+        <div id="footer-avatar" class="message-avatar" style="background-image: url({{avatar}});"></div>
+      {{/if}}
+      <button id="submit-button" class="button message-button--submit">Send</button>
+    </form>
+  </div>
+</script>
+
+<script id="online-user-template" type="text/x-handlebars-template">
+  {{#if avatar}}
+    <span class="list-item-avatar" style="background-image: url({{avatar}});"></span>
+  {{else}}
+    <span class="list-item-avatar"></span>
+  {{/if}}
+  <span class="list-item-name">{{nickname}}</span>
+</script>
+
+<script id="owner-template" type="text/x-handlebars-template">
+  <li class="settings-list-item">
+    <span class="list-item-avatar" style="background-image: url({{avatar}});"></span>
+    <a class="list-item-name" href="http://twitter.com/{{nickname}}" target="_blank">@{{nickname}}</a>
+  </li>
+</script>
+
+<script id="ownership-status-template" type="text/x-handlebars-template">
+  {{#if is_owner}}
+    <div class="owner-confirm isHidden">
+      <p class="owner-confirm-message"><strong>Warning</strong>: By resigning ownership this channel will become available to the public. Please confirm by entering the name of this channel. Hint: It might be <strong>simurai</strong>. :-)</p>
+      <input id="channel-confirmation" class="settings-input-text input-text" placeholder="channel">
+    </div>
+    <button id="resign-ownership" class="settings-button button button--danger">Resign ownership</button>
+  {{else}}
+    {{#if is_hero}}
+      <button id="become-owner" class="settings-button button">Become owner</button>
+    {{else}}
+      <p>Please log in with Twitter to claim/use your own chat room.</p>
+    {{/if}}
+  {{/if}}
+</script>
+
+<script id="owned-channel-template" type="text/x-handlebars-template">
+  <li class="settings-list-item">
+    <a href="/{{permalink}}">#{{permalink}}</a>
+  </li>
+</script>
+
+  <!-- JS -->
+  <script src="jquery.min.js"></script>
+<script>!window.jQuery && document.write("<script src=\"/assets/jquery-1.10.2-090087627fa2126ae451a05d482fe830.js\"><\/script>")</script>
+
+
+    <script src="application-c42f4676420298f9f633b33b7b61caab.js"></script>
+
+  <script type="text/javascript">
+    Talkio.Variables.faye_server = '//ws3.tlk.io';
+    Talkio.Variables.message_view_limit = 50;
+    Talkio.Variables.session_token = '718d017a2898349457c8';
+    Talkio.Variables.chat_id = '185662';
+    Talkio.Variables.permalink = 'geeksquiz';
+    Talkio.Variables.timestamps = {
+        31557600: 'Long long time ago',
+        7776000: 'Couple months ago',
+        5184000: '2 months ago',
+        2592000: '1 month ago',
+        1814400: 'Couple weeks ago',
+        1209600: '2 weeks ago',
+        604800: '1 week ago',
+        259200: 'Couple days ago',
+        172800: '2 days ago',
+        86400: 'Yesterday',
+        43200: 'Half a day ago',
+        10800: 'Couple hours ago',
+        7200: '2 hours ago',
+        3600: 'An hour ago',
+    };
+
+    Talkio.Paths = {
+      sign_out: '/sign_out',
+      participant: '/api/participant',
+      ownership: '/api/chats/185662/ownership',
+      messages: '/api/chats/185662/messages'
+    };
+
+    $(function() {
+      Talkio.Variables.users = new Talkio.Collections.Users();
+      Talkio.Variables.owned_channels = new Talkio.Collections.Channels([]);
+      Talkio.Variables.owners = new Talkio.Collections.Owners([{"token":"06d9d7","nickname":"GeeksQuiz","twitter":true,"avatar":"https://pbs.twimg.com/profile_images/492211736150175744/2DgI11gr_normal.png"}]);
+      Talkio.Variables.current_user = new Talkio.Models.CurrentUser(null);
+
+
+      Talkio.Variables.chat_room = new Talkio.Views.ChatRoom({ collection: Talkio.Variables.users });
+    });
+  </script>
+
+
+
+<section class="popup hide">
+  <div id="invite" class="popup-box">
+    <div class="popup-header">
+      <h2 class="popup-header-title">Invite to this chat!</h2>
+      <button id="popup-close" class="button popup-button--close">✕</button>
+    </div>
+    <div class="popup-content">
+      <p>Invite on <a class="button popup-button" href="https://twitter.com/share?text=Join%20me!%20I%27m%20currently%20chatting%20on%3A&url=http%3A%2F%2Ftlk.io%2FGeeksQuiz" target="_blank">Twitter</a></p>
+      <p>Or share the link below anywhere you like.<br>
+        <span class="popup-link">http://tlk.io/GeeksQuiz</span> <a href="http://embed.tlk.io/GeeksQuiz#" class="url_button button popup-button">Copy</a></p>
+    </div>
+    <div class="popup-footer">Remember, this is a public chat. Anybody with the link can read.</div>
+  </div>
+</section></body></html>
